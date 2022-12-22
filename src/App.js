@@ -1,13 +1,20 @@
 import React from 'react'
 import { ApiFetch } from './api-fetch';
+import { FetchApiList } from './utils';
 
 function App() {
   return (
-    <div>
-      <ApiFetch
-        title= "Joke API"
-        fetchUrl= "https://official-joke-api.appspot.com/random_joke"
-      />
+    <div className="main-div">
+      {FetchApiList.map((list) => {
+        return (
+          <ApiFetch
+            id={list.key}
+            title={list.title}
+            fetchUrl={list.url}
+          />
+        )
+      })
+      }
     </div>
   );
 }
