@@ -4,15 +4,16 @@ import { FetchApiList } from './utils';
 
 function App() {
   return (
-    <div>
-      { FetchApiList.map((list) => {
+    <div className="main-div">
+      {FetchApiList.map((list) => {
         return (
-            <ApiFetch
-              title= {list.title}
-              fetchUrl= {list.url}
-            />
-          )
-        })
+          <ApiFetch
+            id={list.key}
+            title={list.title}
+            fetchUrl={list.url}
+          />
+        )
+      })
       }
     </div>
   );
